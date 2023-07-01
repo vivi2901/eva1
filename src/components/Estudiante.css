@@ -1,3 +1,22 @@
+h6 {
+    font-size: 14px;
+}
+p {
+    font-size: 12px;
+}
+  #lvl1 {
+    margin-top: 100px;
+    width: 450px;
+    opacity: 0.2; 
+    transform: rotate(90deg);
+    position: absolute;
+    left: 100px;
+}
+#btnModal{
+    position: absolute;
+    top: 550px;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -24,7 +43,7 @@
     height: 0;
     border-style: solid;
     border-width: 0 76px 76px 76px;
-    border-color: transparent transparent #f1c40f transparent;
+    border-color: transparent transparent #ffba5a transparent;
     position: absolute;
     top: 330px;
     left: 721px;
@@ -36,7 +55,7 @@
     height: 0;
     border-style: solid;
     border-width: 150px 0 150px 150px;
-    border-color: transparent transparent transparent #e74c3c;
+    border-color: transparent transparent transparent #0a516d;
     position: absolute;
     top: 180px;
     left: 650px;
@@ -48,7 +67,7 @@
     height: 0;
     border-style: solid;
     border-width: 150px 150px 0 150px;
-    border-color: #007bff transparent transparent transparent;
+    border-color: #5dc0a6 transparent transparent transparent;
     position: absolute;
     top: 180px;
     left: 650px;
@@ -61,7 +80,7 @@
     height: 0;
     border-style: solid;
     border-width: 0 0 152px 152px;
-    border-color: transparent transparent #d63294 transparent;
+    border-color: transparent transparent #f6b8d1 transparent;
     position: absolute;
     top: 330px;
     left: 798px;
@@ -73,7 +92,7 @@
     height: 0;
     border-style: solid;
     border-width: 76px 76px 76px 0;
-    border-color: transparent #69dcf0 transparent transparent;
+    border-color: transparent #007AB2 transparent transparent;
     position: absolute;
     top: 180px;
     left: 875px;

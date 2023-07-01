@@ -1,8 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Draggable from 'react-draggable';
+import { Button, Modal } from 'react-bootstrap';
 import './Profesor.css';
 
+
 const Profesor = () => {
+  const [showModal, setShowModal] = useState(false);
   useEffect(() => {
     const blocks = document.querySelectorAll('.block');
     let angle = 90;
@@ -39,6 +42,21 @@ const Profesor = () => {
     <div className="containerP">
       <div className="title-containerP">
         <h1>Profesor</h1>
+        <div id="modal">
+        <Button onClick={() => setShowModal(true)} id="btnModal" variant="light">Terminar</Button>
+        <Modal show={showModal} onHide={() => setShowModal(false)}>
+          <Modal.Header closeButton>
+            <Modal.Title>Terminar Figura</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p1>Se enviara esta figura a la vista del estudiante</p1>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={() => setShowModal(false)}>Cancelar</Button>
+            <Button variant="primary">Confirmar</Button>
+          </Modal.Footer>
+        </Modal>
+      </div>
       </div>
       <div>
         <div id="blockTrayP">
@@ -69,12 +87,12 @@ const Profesor = () => {
           </Draggable>
           <Draggable>
             <svg id="triangle5P" className="block">
-              <rect x="98" y="0" width="149" height="75" fill="green" transform="skewX(-45)" />
+              <rect x="98" y="0" width="149" height="75" fill="#665c84" transform="skewX(-45)" />
             </svg>
           </Draggable>
           <Draggable>
             <svg id="square1P" className="block" width="146" height="146">
-              <polygon points="73,0 146,73 73,146 0,73" style={{ fill: 'red' }} />
+              <polygon points="73,0 146,73 73,146 0,73" style={{ fill: '#ff7657' }} />
             </svg>
           </Draggable>
         </div>

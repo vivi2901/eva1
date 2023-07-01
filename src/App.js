@@ -4,6 +4,7 @@ import './App.css';
 import Home from './components/Home';
 import Estudiante from './components/Estudiante';
 import Profesor from './components/Profesor';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
