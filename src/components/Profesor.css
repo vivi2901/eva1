@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #e0fffd;
   }
   
   .title-containerP {
@@ -11,13 +12,39 @@
     position: absolute;
     top: 20px;
   }
-  
+#cuadro{
+  width: 800px;
+  height: 530px;
+  position: absolute;
+  top: 90px;
+  left: 50px;
+  background-color: #fafafa;
+  border-radius: 5%;
+  color: #fafafa;
+}
+
+.custom-form {
+  width: 380px;
+  position: absolute;
+  bottom: 70px;
+  right: 10px;
+}
+
 
 #blockTrayP {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    position: absolute;
+    top: -50px;
+    left: -200px;
   }
+  
+#btnModal{
+  position: absolute;
+  top: 550px;
+  right: -550px;
+}
   
   #squareP {
     width: 0;

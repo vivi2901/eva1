@@ -40,7 +40,7 @@ const Estudiante = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="containerE" id="containerE">
       <div className="title-container">
       <div id="lista" style={{ position: 'fixed', bottom: '10px', right: '10px' }}>
         <ListGroup style={{ maxWidth: '200px' }}>
@@ -73,7 +73,7 @@ const Estudiante = () => {
         <h1>Estudiante</h1>
       </div>
       <div id="modal">
-        <Button onClick={() => setShowModal(true)} id="btnModal" variant="light">Terminar</Button>
+        <Button onClick={() => setShowModal(true)} id="btnModal">Terminar</Button>
         <Modal show={showModal} onHide={() => setShowModal(false)}>
           <Modal.Header closeButton>
             <Modal.Title>Mandar Figura</Modal.Title>

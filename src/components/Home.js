@@ -4,16 +4,9 @@ import './Home.css';
 
 const Home = () => {
   return (
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./Home.css" type="text/css" />
-        <title>Tangram</title>
-      </head>
-      <body>
+    <div id="cont">
+      <title>Tangram</title>
         <div className="titulo">Tangram Un Enfoque Didactico</div>
-
         <div className="button-container">
             <Button
 							variant='contained'
@@ -38,8 +31,7 @@ const Home = () => {
           <div className="pieces square"></div>
           <div className="pieces parallel"></div>
         </div>
-      </body>
-    </html>
+    </div>
   );
 };
 

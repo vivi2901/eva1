@@ -14,14 +14,17 @@ p {
 }
 #btnModal{
     position: absolute;
-    top: 550px;
+    justify-content: center;
+    align-items: center;
+    top: 600px;
 }
 
-.container {
+#containerE {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #e0fffd;
   }
   
   .title-container {

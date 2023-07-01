@@ -40,10 +40,11 @@ const Profesor = () => {
 
   return (
     <div className="containerP">
+      <div id="cuadro"><h6>Realiza tu figura aca</h6></div>
       <div className="title-containerP">
         <h1>Profesor</h1>
         <div id="modal">
-        <Button onClick={() => setShowModal(true)} id="btnModal" variant="light">Terminar</Button>
+        <Button onClick={() => setShowModal(true)} id="btnModal">Terminar</Button>
         <Modal show={showModal} onHide={() => setShowModal(false)}>
           <Modal.Header closeButton>
             <Modal.Title>Terminar Figura</Modal.Title>
@@ -96,6 +97,53 @@ const Profesor = () => {
             </svg>
           </Draggable>
         </div>
+      </div>
+      <div id="form" className="custom-form">
+        <form>
+          <div className="form-group row">
+            <label htmlFor="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm">Paso 1:</label>
+            <div className="col-sm-10">
+              <input type="email" className="form-control form-control-sm" id="colFormLabelSm" placeholder="Mover el triangulo grande azul.." />
+            </div>
+          </div>
+          <div className="form-group row">
+            <label htmlFor="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm">Paso 2:</label>
+            <div className="col-sm-10">
+              <input type="email" className="form-control form-control-sm" id="colFormLabelSm" placeholder="Mover el triangulo grande agua.." />
+            </div>
+          </div>
+          <div className="form-group row">
+            <label htmlFor="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm">Paso 3:</label>
+            <div className="col-sm-10">
+              <input type="email" className="form-control form-control-sm" id="colFormLabelSm" placeholder="Mover el triangulo mediano rosa.." />
+            </div>
+          </div>
+          <div className="form-group row">
+            <label htmlFor="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm">Paso 4:</label>
+            <div className="col-sm-10">
+              <input type="email" className="form-control form-control-sm" id="colFormLabelSm" placeholder="Mover el triangulo pequeño naranja.." />
+            </div>
+          </div>
+          <div className="form-group row">
+            <label htmlFor="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm">Paso 5:</label>
+            <div className="col-sm-10">
+              <input type="email" className="form-control form-control-sm" id="colFormLabelSm" placeholder="Mover el triangulo pequeño azul.." />
+            </div>
+          </div>
+          <div className="form-group row">
+            <label htmlFor="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm">Paso 6:</label>
+            <div className="col-sm-10">
+              <input type="email" className="form-control form-control-sm" id="colFormLabelSm" placeholder="Mover el cuadrado.." />
+            </div>
+          </div>
+          <div className="form-group row">
+            <label htmlFor="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm">Paso 7:</label>
+            <div className="col-sm-10">
+              <input type="email" className="form-control form-control-sm" id="colFormLabelSm" placeholder="Mover el paralelogramo.." />
+            </div>
+          </div>
+         {/* <button type="submit" className="btn btn-primary">Sign in</button> */}
+        </form>
       </div>
     </div>
   );

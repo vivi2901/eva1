@@ -11,7 +11,7 @@
 	--silhouette: #063041;
 }
 
-html, body {
+#cont{
 	display: flex;
 	height: 100%;
 	width: 100%;
@@ -25,7 +25,9 @@ html, body {
 .tangram {
 	position: relative;
 	width: 600px;
-	height: 600px;
+	height: 800px;
+	top : 100px;
+	left: 150px;
 }
 
 .pieces {
@@ -34,7 +36,7 @@ html, body {
 	animation-delay: 2s;
 	animation-duration: 30s;
 	animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  	animation-timing-function: ease-in-out;
 }
 
 .triangles {
@@ -540,6 +542,8 @@ html, body {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
+	position: absolute;
+	left: 200px;
   }
   
   .button {
