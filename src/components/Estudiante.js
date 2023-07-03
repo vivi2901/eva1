@@ -7,6 +7,7 @@ import './Estudiante.css';
 
 const Estudiante = () => {
   const [showModal, setShowModal] = useState(false);
+  
   useEffect(() => {
     const blocks = document.querySelectorAll('.block');
     let angle = 90;
@@ -18,19 +19,19 @@ const Estudiante = () => {
     function handleBlockClick(event) {
       event.stopPropagation();
       const target = event.currentTarget;
+      const figureId = target.id;
     
-      if (target.id === 'square1') {
+      let clickCount = target.getAttribute('data-click-count') || 0;
+      clickCount = parseInt(clickCount, 10) + 1;
+    
+      if (clickCount % 2 === 0) {
         const currentRotation = target.getAttribute('transform');
         const newRotation = currentRotation ? `${currentRotation} rotate(45)` : 'rotate(45)';
         target.setAttribute('transform', newRotation);
-      } else {
-        const currentRotation = target.getAttribute('transform');
-        const newRotation = currentRotation ? `${currentRotation} rotate(90)` : 'rotate(90)';
-        target.setAttribute('transform', newRotation);
       }
+    
+      target.setAttribute('data-click-count', clickCount);
     }
- 
-
 
     return () => {
       blocks.forEach((block) => {
