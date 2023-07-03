@@ -144,6 +144,7 @@ const Profesor = () => {
               <input type="email" className="form-control form-control-sm" id="colFormLabelSm" placeholder="Mover el paralelogramo.." />
             </div>
           </div>
+          {/* <button type="submit" className="btn btn-primary">Sign in</button> */}
          {/* <button type="submit" className="btn btn-primary">Sign in</button> */}
         </form>
       </div>
