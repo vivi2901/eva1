@@ -73,7 +73,7 @@ const Estudiante = () => {
         <h1>Estudiante</h1>
       </div>
       <div id="modal">
-        <Button onClick={() => setShowModal(true)} id="btnModal">Terminar</Button>
+        <Button onClick={() => setShowModal(true)} id="btnModalE">Terminar</Button>
         <Modal show={showModal} onHide={() => setShowModal(false)}>
           <Modal.Header closeButton>
             <Modal.Title>Mandar Figura</Modal.Title>

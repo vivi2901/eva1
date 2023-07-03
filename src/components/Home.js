@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Container, Paper, Avatar, Typography, TextField, Button, CssBaseline } from '@material-ui/core'
+import { Grid, Container, Paper, Avatar, Typography, TextField, Button, CssBaseline } from '@material-ui/core';
 import './Home.css';  
 
 const Home = () => {

@@ -12,11 +12,12 @@ p {
     position: absolute;
     left: 100px;
 }
-#btnModal{
-    position: absolute;
+#btnModalE{
     justify-content: center;
     align-items: center;
-    top: 600px;
+    position: absolute;
+    top: 550px;
+    right: 500px;
 }
 
 #containerE {
