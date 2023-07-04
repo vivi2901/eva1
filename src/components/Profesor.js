@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Draggable from 'react-draggable';
 import { Button, Modal } from 'react-bootstrap';
+import html2canvas from 'html2canvas';
 import './Profesor.css';
 
 
@@ -30,18 +31,25 @@ const Profesor = () => {
     
       target.setAttribute('data-click-count', clickCount);
     }
- 
-
-
     return () => {
       blocks.forEach((block) => {
         block.removeEventListener('click', handleBlockClick);
       });
     };
   }, []);
+ 
+  const handleConfirmarClick = () => {
+    html2canvas(document.getElementById('captura')).then(function (canvas) {
+      var link = document.createElement('a');
+      link.href = canvas.toDataURL();
+      link.download = 'screenshot.png';
+      link.click();
+    });
 
+  };
+  
   return (
-    <div className="containerP">
+    <div className="containerP"  id='captura'>
       <div id="cuadro"><h6>Realiza tu figura aca</h6></div>
       <div className="title-containerP">
         <h1>Profesor</h1>
@@ -56,7 +64,7 @@ const Profesor = () => {
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={() => setShowModal(false)}>Cancelar</Button>
-            <Button variant="primary">Confirmar</Button>
+            <Button variant="primary"  onClick={handleConfirmarClick} >Confirmar</Button>
           </Modal.Footer>
         </Modal>
       </div>

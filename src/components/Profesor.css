@@ -43,7 +43,7 @@
 #btnModal{
   position: absolute;
   top: 550px;
-  right: -550px;
+  right: -250px;
 }
   
   #squareP {
@@ -117,6 +117,8 @@
     cursor: pointer; 
   }
   #square1P {
+    width: 146px;
+    height: 146px;
     position: absolute;
     top: 258px;
     left: 660px;
