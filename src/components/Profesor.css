@@ -91,7 +91,7 @@
     border-color: transparent transparent #f6b8d1 transparent;
     position: absolute;
     top: 330px;
-    left: 658px;
+    left: 659px;
     /*transition: all 0.5s ease;*/
     cursor: pointer;
   }
@@ -108,20 +108,50 @@
     cursor: pointer; 
   }
   #triangle5P {
-    width: 263px;
-    height: 100px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 76px 76px 0 76px;
+    border-color: #665c84 transparent transparent transparent;
     position: absolute;
-    top: 407px;
-    left: 483px;
+    top: 406px;
+    left: 585px;
+    /*transition: all 0.5s ease;*/
+    cursor: pointer;
+  }
+  #triangle6P {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 76px 76px 76px;
+    border-color: transparent transparent #665c84 transparent;
+    position: absolute;
+    top: 406px;
+    left: 510px;
     /*transition: all 0.5s ease;*/
     cursor: pointer; 
   }
-  #square1P {
-    width: 146px;
-    height: 146px;
+  #triangle7P {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 76px 76px 0 76px;
+    border-color: #ff7657 transparent transparent transparent;
     position: absolute;
-    top: 258px;
-    left: 660px;
+    top: 332px;
+    left: 658px;
+    /*transition: all 0.5s ease;*/
+    cursor: pointer;
+  }
+  #triangle8P {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 76px 76px 76px;
+    border-color: transparent transparent #ff7657 transparent;
+    position: absolute;
+    top: 257px;
+    left: 658px;
     /*transition: all 0.5s ease;*/
     cursor: pointer; 
   }

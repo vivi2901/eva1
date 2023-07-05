@@ -98,12 +98,22 @@ const Profesor = () => {
           </Draggable>
           <Draggable>
             <svg id="triangle5P" className="block">
-              <rect x="98" y="0" width="149" height="75" fill="#665c84" transform="skewX(-45)" />
+              <polygon points="0,0 100,0 0,100"/>
             </svg>
           </Draggable>
           <Draggable>
-            <svg id="square1P" className="block" width="146" height="146">
-              <polygon points="73,0 146,73 73,146 0,73" style={{ fill: '#ff7657' }} />
+            <svg id="triangle6P" className="block" >
+              <polygon points="0,0 100,0 0,100"/>
+            </svg>
+          </Draggable>
+          <Draggable>
+            <svg id="triangle7P" className="block" >
+              <polygon points="0,0 100,0 0,100"/>
+            </svg>
+          </Draggable>
+          <Draggable>
+            <svg id="triangle8P" className="block" >
+              <polygon points="0,0 100,0 0,100"/>
             </svg>
           </Draggable>
         </div>
