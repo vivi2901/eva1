@@ -103,22 +103,56 @@ p {
     /*transition: all 0.5s ease;*/
     cursor: pointer; 
   }
-  #triangle5 {
-    width: 263px;
-    height: 100px;
+  
+  #triangle5PEst {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 76px 76px 0 76px;
+    border-color: #665c84 transparent transparent transparent;
     position: absolute;
-    top: 407px;
-    left: 623px;
+    top: 406px;
+    left: 720px;
+    /*transition: all 0.5s ease;*/
+    cursor: pointer;
+  }
+  #triangle6PEst {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 76px 76px 76px;
+    border-color: transparent transparent #665c84 transparent;
+    position: absolute;
+    top: 406px;
+    left: 645px;
     /*transition: all 0.5s ease;*/
     cursor: pointer; 
   }
-  #square1 {
+  #triangle7PEst {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 76px 76px 0 76px;
+    border-color: #ff7657 transparent transparent transparent;
     position: absolute;
-    top: 258px;
-    left: 800px;
+    top: 332px;
+    left: 798px;
+    /*transition: all 0.5s ease;*/
+    cursor: pointer;
+  }
+  #triangle8PEst {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 76px 76px 76px;
+    border-color: transparent transparent #ff7657 transparent;
+    position: absolute;
+    top: 257px;
+    left: 798px;
     /*transition: all 0.5s ease;*/
     cursor: pointer; 
   }
+  
   
   #canvas {
     width: 550px;

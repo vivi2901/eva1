@@ -67,7 +67,7 @@ const Estudiante = () => {
             <p className="list-group-item-text">Paso 6:</p>
           </ListGroupItem>
           <ListGroupItem>
-            <p className="list-group-item-text">Paso 7:</p>
+            <p className="list-group-item-text">Paso 8:</p>
           </ListGroupItem>
         </ListGroup>
       </div>
@@ -120,13 +120,23 @@ const Estudiante = () => {
             </svg>
           </Draggable>
           <Draggable>
-            <svg id="triangle5" className="block">
-              <rect x="98" y="0" width="149" height="75" fill="#665c84" transform="skewX(-45)" />
+            <svg id="triangle5PEst" className="block">
+              <polygon points="0,0 100,0 0,100"/>
             </svg>
           </Draggable>
           <Draggable>
-            <svg id="square1" className="block" width="146" height="146">
-              <polygon points="73,0 146,73 73,146 0,73" style={{ fill: '#ff7657' }} />
+            <svg id="triangle6PEst" className="block" >
+              <polygon points="0,0 100,0 0,100"/>
+            </svg>
+          </Draggable>
+          <Draggable>
+            <svg id="triangle7PEst" className="block" >
+              <polygon points="0,0 100,0 0,100"/>
+            </svg>
+          </Draggable>
+          <Draggable>
+            <svg id="triangle8PEst" className="block" >
+              <polygon points="0,0 100,0 0,100"/>
             </svg>
           </Draggable>
         </div>
