@@ -1,6 +1,7 @@
 import React from 'react';
-import { Grid, Container, Paper, Avatar, Typography, TextField, Button, CssBaseline } from '@material-ui/core';
-import './Home.css';  
+import './Home.css';
+
+import { Button, Modal } from 'react-bootstrap';  
 
 const Home = () => {
   return (
@@ -9,13 +10,13 @@ const Home = () => {
         <div className="titulo">Tangram Un Enfoque Didactico</div>
         <div className="button-container">
             <Button
-							variant='contained'
+							variant='primary'
                             href="/estudiante"
 						>
 							Empezar Estudiante
 						</Button>
             <Button
-							variant='contained'
+							variant='primary'
                             href="/profesor"
 						>
 							Empezar Profesor

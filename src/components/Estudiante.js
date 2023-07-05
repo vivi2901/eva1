@@ -4,6 +4,7 @@ import { ListGroup, ListGroupItem } from 'reactstrap';
 import choeteImage from '../img/choete.png';
 import { Button, Modal } from 'react-bootstrap';
 import './Estudiante.css';
+import { usePruebaData } from './PruebaContext';
 
 const Estudiante = () => {
   const [showModal, setShowModal] = useState(false);
@@ -39,7 +40,8 @@ const Estudiante = () => {
       });
     };
   }, []);
-
+  const { imageLink, paso1, paso2, paso3, paso4,paso5,paso6,paso7} = usePruebaData();
+  console.log(imageLink)
   return (
     <div className="containerE" id="containerE">
       <div className="title-container">
@@ -49,25 +51,25 @@ const Estudiante = () => {
             <h6 className="list-group-item-heading">Pasos</h6>
           </ListGroupItem>
           <ListGroupItem>
-            <p className="list-group-item-text">Paso 1:</p>
+            <p className="list-group-item-text">Paso 1: {paso1}</p>
           </ListGroupItem>
           <ListGroupItem>
-            <p className="list-group-item-text">Paso 2:</p>
+            <p className="list-group-item-text">Paso 2: {paso2}</p>
           </ListGroupItem>
           <ListGroupItem>
-            <p className="list-group-item-text">Paso 3:</p>
+            <p className="list-group-item-text">Paso 3: {paso3}</p>
           </ListGroupItem>
           <ListGroupItem>
-            <p className="list-group-item-text">Paso 4:</p>
+            <p className="list-group-item-text">Paso 4: {paso4}</p>
           </ListGroupItem>
           <ListGroupItem>
-            <p className="list-group-item-text">Paso 5:</p>
+            <p className="list-group-item-text">Paso 5: {paso5}</p>
           </ListGroupItem>
           <ListGroupItem>
-            <p className="list-group-item-text">Paso 6:</p>
+            <p className="list-group-item-text">Paso 6: {paso6}</p>
           </ListGroupItem>
           <ListGroupItem>
-            <p className="list-group-item-text">Paso 8:</p>
+            <p className="list-group-item-text">Paso 7: {paso7}</p>
           </ListGroupItem>
         </ListGroup>
       </div>
@@ -89,8 +91,8 @@ const Estudiante = () => {
           </Modal.Footer>
         </Modal>
       </div>
-      <div id="lvl1">
-        <img src={choeteImage} alt="imagen choete" />
+      <div id="lvl1" style={{ width: '500px', height: '500px' }}>
+        <img src={imageLink} alt="imagen choete" className="img-fluid" />
       </div>
       <div>
         <div id="blockTray">

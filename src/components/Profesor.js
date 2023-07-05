@@ -3,10 +3,19 @@ import Draggable from 'react-draggable';
 import { Button, Modal } from 'react-bootstrap';
 import html2canvas from 'html2canvas';
 import './Profesor.css';
+import {uploadFile64, uploadFile} from '../firebase/config';
+import { useNavigate  } from 'react-router-dom';
+import { usePruebaData } from './PruebaContext';
 
 
 const Profesor = () => {
   const [showModal, setShowModal] = useState(false);
+  const [formValues, setFormValues] = useState({});
+  const [result, setResult] = useState(null);
+  const navigate = useNavigate();
+  const { setPruebaData } = usePruebaData();
+  const [file, setFile] = useState(null);
+
   useEffect(() => {
     const blocks = document.querySelectorAll('.block');
     let angle = 90;
@@ -38,21 +47,75 @@ const Profesor = () => {
     };
   }, []);
  
-  const handleConfirmarClick = () => {
-    html2canvas(document.getElementById('captura')).then(function (canvas) {
-      var link = document.createElement('a');
-      link.href = canvas.toDataURL();
-      link.download = 'screenshot.png';
-      link.click();
-    });
+  const handleConfirmarClick64 = async () => {
+    try {
+      const canvas = await html2canvas(document.getElementById('captura'));
+      const base64Image = canvas.toDataURL();
+      const uploadResult = await uploadFile64(base64Image);
+      setResult(uploadResult);
+      console.log(uploadResult)
 
+      const data = {
+        imageLink: uploadResult,
+        paso1: formValues.paso1,
+        paso2: formValues.paso2,
+        paso3: formValues.paso3,
+        paso4: formValues.paso4,
+        paso5: formValues.paso5,
+        paso6: formValues.paso6,
+        paso7: formValues.paso7,
+        // Agrega el resto de los campos según sea necesario
+      };
+      setPruebaData(data)
+      setShowModal(false)
+      console.log(data)
+      console.log(setPruebaData)
+    } catch (error) {
+      console.log(error);
+    }
   };
   
+    const handleInputChange = (event) => {
+      const { name, value } = event.target;
+      const updatedFormValues = { ...formValues, [name]: value };
+      setFormValues(updatedFormValues);
+    };
+
+    
+
+    const handleSubmit = async (e) => {
+      //e.preventDefault();
+      try {
+        const result = await uploadFile(file);
+        console.log(result);
+        const data = {
+          imageLink: result,
+          paso1: formValues.paso1,
+          paso2: formValues.paso2,
+          paso3: formValues.paso3,
+          paso4: formValues.paso4,
+          paso5: formValues.paso5,
+          paso6: formValues.paso6,
+          paso7: formValues.paso7,
+          // Agrega el resto de los campos según sea necesario
+        };
+        setPruebaData(data)
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  
+    const handleFileChange = (e) => {
+      const selectedFile = e.target.files[0];
+      setFile(selectedFile);
+    };
+
   return (
     <div className="containerP"  id='captura'>
       <div id="cuadro"><h6>Realiza tu figura aca</h6></div>
       <div className="title-containerP">
         <h1>Profesor</h1>
+        
         <div id="modal">
         <Button onClick={() => setShowModal(true)} id="btnModal">Terminar</Button>
         <Modal show={showModal} onHide={() => setShowModal(false)}>
@@ -64,12 +127,21 @@ const Profesor = () => {
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={() => setShowModal(false)}>Cancelar</Button>
-            <Button variant="primary"  onClick={handleConfirmarClick} >Confirmar</Button>
+            <Button variant="primary"  onClick={handleConfirmarClick64} >Confirmar</Button>
           </Modal.Footer>
         </Modal>
       </div>
+          {/* <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="fileInput">Selecciona un archivo</label>
+              <input type="file" className="form-control-file" id="fileInput" onChange={handleFileChange} />
+            </div>
+            <button type="submit" className="btn btn-primary">
+              Subir
+            </button>
+          </form> */}
       </div>
-      <div>
+      <div id='figura'>
         <div id="blockTrayP">
           <Draggable>
             <svg id="squareP" className="block">
@@ -123,47 +195,101 @@ const Profesor = () => {
           <div className="form-group row">
             <label htmlFor="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm">Paso 1:</label>
             <div className="col-sm-10">
-              <input type="email" className="form-control form-control-sm" id="colFormLabelSm" placeholder="Mover el triangulo grande azul.." />
+            <input
+              type="text"
+              className="form-control form-control-sm"
+              id="colFormLabelSm"
+              placeholder="Mover el triangulo grande azul.."
+              name="paso1"
+              value={formValues.paso1 || ''}
+              onChange={handleInputChange}
+            />
             </div>
           </div>
           <div className="form-group row">
             <label htmlFor="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm">Paso 2:</label>
             <div className="col-sm-10">
-              <input type="email" className="form-control form-control-sm" id="colFormLabelSm" placeholder="Mover el triangulo grande agua.." />
+            <input
+              type="text"
+              className="form-control form-control-sm"
+              id="colFormLabelSm"
+              placeholder="Mover el triangulo grande azul.."
+              name="paso2"
+              value={formValues.paso2 || ''}
+              onChange={handleInputChange}
+            />
             </div>
           </div>
           <div className="form-group row">
             <label htmlFor="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm">Paso 3:</label>
             <div className="col-sm-10">
-              <input type="email" className="form-control form-control-sm" id="colFormLabelSm" placeholder="Mover el triangulo mediano rosa.." />
+            <input
+              type="text"
+              className="form-control form-control-sm"
+              id="colFormLabelSm"
+              placeholder="Mover el triangulo grande azul.."
+              name="paso3"
+              value={formValues.paso3 || ''}
+              onChange={handleInputChange}
+            />
             </div>
           </div>
           <div className="form-group row">
             <label htmlFor="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm">Paso 4:</label>
             <div className="col-sm-10">
-              <input type="email" className="form-control form-control-sm" id="colFormLabelSm" placeholder="Mover el triangulo pequeño naranja.." />
+            <input
+              type="text"
+              className="form-control form-control-sm"
+              id="colFormLabelSm"
+              placeholder="Mover el triangulo grande azul.."
+              name="paso4"
+              value={formValues.paso4 || ''}
+              onChange={handleInputChange}
+            />
             </div>
           </div>
           <div className="form-group row">
             <label htmlFor="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm">Paso 5:</label>
             <div className="col-sm-10">
-              <input type="email" className="form-control form-control-sm" id="colFormLabelSm" placeholder="Mover el triangulo pequeño azul.." />
+            <input
+              type="text"
+              className="form-control form-control-sm"
+              id="colFormLabelSm"
+              placeholder="Mover el triangulo grande azul.."
+              name="paso5"
+              value={formValues.paso5 || ''}
+              onChange={handleInputChange}
+            />
             </div>
           </div>
           <div className="form-group row">
             <label htmlFor="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm">Paso 6:</label>
             <div className="col-sm-10">
-              <input type="email" className="form-control form-control-sm" id="colFormLabelSm" placeholder="Mover el cuadrado.." />
+            <input
+              type="text"
+              className="form-control form-control-sm"
+              id="colFormLabelSm"
+              placeholder="Mover el triangulo grande azul.."
+              name="paso6"
+              value={formValues.paso6 || ''}
+              onChange={handleInputChange}
+            />
             </div>
           </div>
           <div className="form-group row">
             <label htmlFor="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm">Paso 7:</label>
             <div className="col-sm-10">
-              <input type="email" className="form-control form-control-sm" id="colFormLabelSm" placeholder="Mover el paralelogramo.." />
+            <input
+              type="text"
+              className="form-control form-control-sm"
+              id="colFormLabelSm"
+              placeholder="Mover el triangulo grande azul.."
+              name="paso7"
+              value={formValues.paso7 || ''}
+              onChange={handleInputChange}
+            />
             </div>
           </div>
-          {/* <button type="submit" className="btn btn-primary">Sign in</button> */}
-         {/* <button type="submit" className="btn btn-primary">Sign in</button> */}
         </form>
       </div>
     </div>
