@@ -4,11 +4,31 @@ import { ListGroup, ListGroupItem } from 'reactstrap';
 import choeteImage from '../img/choete.png';
 import { Button, Modal } from 'react-bootstrap';
 import './Estudiante.css';
+import { pipwerks} from './SCORM_API_wrapper';
+
+function initializeSCORM() {
+  pipwerks.SCORM.connection.initialize();
+
+  if (pipwerks.SCORM.connection.isActive) {
+    var completionStatus = pipwerks.SCORM.data.get("cmi.completion_status");
+    console.log("Estado de finalización: SI funciona" + completionStatus);
+  } else {
+    console.log("Error al inicializar la conexión con la API de SCORM.");
+  }
+}
+const handleSi = () => {
+  if (pipwerks && pipwerks.SCORM && pipwerks.SCORM.connection.isActive) {
+    pipwerks.SCORM.status("set", "completed");
+  } else {
+    console.log("Error al inicializar la conexión con la API de SCORM.");
+  }
+};
 
 const Estudiante = () => {
   const [showModal, setShowModal] = useState(false);
   
   useEffect(() => {
+    initializeSCORM();
     const blocks = document.querySelectorAll('.block');
     let angle = 90;
 
@@ -85,7 +105,7 @@ const Estudiante = () => {
           <Modal.Footer>
             <Button variant="secondary" onClick={() => setShowModal(false)}>Cancelar</Button>
             <Button variant="primary">No</Button>
-            <Button variant="primary">Si</Button>
+            <Button variant="primary" id= "btnSi" onClick={handleSi} >Si</Button>
           </Modal.Footer>
         </Modal>
       </div>

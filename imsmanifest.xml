@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="your_manifest_identifier" version="1.0" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3" xmlns:adlseq="http://www.adlnet.org/xsd/adlseq_v1p3" xmlns:adlnav="http://www.adlnet.org/xsd/adlnav_v1p3" xmlns:imsss="http://www.imsglobal.org/xsd/imsss" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 http://www.imsglobal.org/xsd/imscp_v1p1.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+  </metadata>
+  <organizations default="tangram_organization_id">
+    <organization identifier="tangram_organization_id">
+      <title>Tangram</title>
+      <item identifier="tangram_item_id" identifierref="tangram_resource_id">
+        <title>Tangram</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="your_resource_id" type="webcontent" href="index.html">
+      <file href="index.html"/>
+    </resource>
+  </resources>
+</manifest>
